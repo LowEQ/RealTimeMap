@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.WebSockets" Version="2.2.1" />
+    <PackageReference Include="MQTTnet" Version="3.0.8" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Syncfusion.EJ2.Blazor" Version="17.3.0.11-beta" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\styles\images\" />
+  </ItemGroup>
+
+</Project>

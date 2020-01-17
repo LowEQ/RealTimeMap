@@ -1,0 +1,32 @@
+﻿@page "/traindata"
+
+<table class="table">
+    <tr>
+        <th>Train Number</th>
+        <th>Speed</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+    </tr>
+    @foreach (var item in train)
+    {
+        <tr>
+            <td>@item.trainId</td>
+            <td>@item.speed</td>
+            <td>@item.latitude</td>
+            <td>@item.longitude</td>
+        </tr>
+    }
+</table>
+
+
+@code {
+    List<Juna> train = new List<Juna>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        APIClient client = new APIClient();
+        train = await client.GetJunaAsync();
+
+    }
+}
+

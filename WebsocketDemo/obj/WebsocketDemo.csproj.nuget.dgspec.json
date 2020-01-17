@@ -1,0 +1,85 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Jiang Zhipeng\\Desktop\\GIS_Developments\\Demo\\WebsocketDemo\\WebsocketDemo\\WebsocketDemo.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Jiang Zhipeng\\Desktop\\GIS_Developments\\Demo\\WebsocketDemo\\WebsocketDemo\\WebsocketDemo.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Jiang Zhipeng\\Desktop\\GIS_Developments\\Demo\\WebsocketDemo\\WebsocketDemo\\WebsocketDemo.csproj",
+        "projectName": "WebsocketDemo",
+        "projectPath": "C:\\Users\\Jiang Zhipeng\\Desktop\\GIS_Developments\\Demo\\WebsocketDemo\\WebsocketDemo\\WebsocketDemo.csproj",
+        "packagesPath": "C:\\Users\\Jiang Zhipeng\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jiang Zhipeng\\Desktop\\GIS_Developments\\Demo\\WebsocketDemo\\WebsocketDemo\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Jiang Zhipeng\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\Jiang Zhipeng\\AppData\\Local\\Esri\\NuGet": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "MQTTnet": {
+              "target": "Package",
+              "version": "[3.0.8, )"
+            },
+            "Microsoft.AspNetCore.WebSockets": {
+              "target": "Package",
+              "version": "[2.2.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Syncfusion.EJ2.Blazor": {
+              "target": "Package",
+              "version": "[17.3.0.11-beta, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

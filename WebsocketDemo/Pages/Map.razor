@@ -1,0 +1,51 @@
+﻿@page "/map"
+@using WebsocketDemo.Data
+<EjsMaps ProjectionType="@ProjectionType.Mercator">
+    <MapsCenterPosition Latitude="61.924110" Longitude="25.748152"></MapsCenterPosition>
+    <MapsZoomSettings Enable="true"
+                      Toolbars='new string[] { "Zoom", "ZoomIn", "ZoomOut", "Pan", "Reset" }'
+                      ZoomFactor="5">
+    </MapsZoomSettings>
+    <MapsLayers>
+        <MapsLayer LayerType="@ShapeLayerType.OSM">
+            <MapsMarkerSettings>
+                <MapsMarker Visible="true" DataSource="@train" Height='30' Width='30' Shape='MarkerType.Image' ImageUrl='styles/images/train.png'>
+                    <MapsMarkerTooltipSettings Visible="true" ValuePath="trainId" Format="Train ID: <b>${trainId}</b><br>Speed: <b>${speed} km/h</b>"></MapsMarkerTooltipSettings>
+                </MapsMarker>
+            </MapsMarkerSettings>
+        </MapsLayer>
+    </MapsLayers>
+</EjsMaps>
+@code {
+    //APIClient client = new APIClient();
+    //MQTTClient client = new MQTTClient();
+    static List<Juna> train = new List<Juna>();
+    TrainData test = new TrainData();
+    UpdateService mapUpdater = new UpdateService();
+
+    private (Juna juna, Juna currentJuna) lastJuna;
+
+    protected override async Task OnInitializedAsync()
+    {
+        train = await WebsocketDemo.Data.TrainData.GetList();
+        mapUpdater.UpdateAction = UpdateMap;
+        //Update the data:
+        //this.StateHasChanged();
+    }
+
+    public async void UpdateMap(Juna juna, Juna currentJuna)
+    {
+        await InvokeAsync(() =>{
+            lastJuna = (juna, currentJuna);
+            StateHasChanged();
+        });
+
+    }
+    public void StartTimer()
+    {
+        mapUpdater.StartTimer();
+    }
+
+
+}
+
