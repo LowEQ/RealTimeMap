@@ -20,32 +20,12 @@
     //APIClient client = new APIClient();
     //MQTTClient client = new MQTTClient();
     static List<Juna> train = new List<Juna>();
-    TrainData test = new TrainData();
-    UpdateService mapUpdater = new UpdateService();
 
-    private (Juna juna, Juna currentJuna) lastJuna;
 
     protected override async Task OnInitializedAsync()
     {
         train = await WebsocketDemo.Data.TrainData.GetList();
-        mapUpdater.UpdateAction = UpdateMap;
-        //Update the data:
-        //this.StateHasChanged();
     }
-
-    public async void UpdateMap(Juna juna, Juna currentJuna)
-    {
-        await InvokeAsync(() =>{
-            lastJuna = (juna, currentJuna);
-            StateHasChanged();
-        });
-
-    }
-    public void StartTimer()
-    {
-        mapUpdater.StartTimer();
-    }
-
 
 }
 
